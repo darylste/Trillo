@@ -1,6 +1,8 @@
 
 :root {
-    // COLORS
+/*-------------------------------
+        COLORS 
+-------------------------------*/
     
     --color-primary: #eb2f64;
     --color-primary-light: #FF3366;
@@ -17,7 +19,16 @@
     --color-grey-dark-2: #777;
     --color-grey-dark-3: #999;
 
-    // SHADOW
+/*-------------------------------
+        BOX SHADOW 
+-------------------------------*/
 
+    --shadow-light: 0 2rem 5rem rgba(0, 0, 0, .06);
     --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, .3);
+
+/*-------------------------------
+        BORDERS 
+-------------------------------*/
+
+    --border-small: 1px solid var(--color-grey-light-2);
 }
