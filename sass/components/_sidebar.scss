@@ -79,5 +79,13 @@
     color: var(--color-grey-light-4);
     text-align: center;
     padding: 2.5rem;
+
+    &__list {
+        list-style: none;
+
+        li {
+            margin-bottom: .5rem;
+        }
+    }
     
 }
