@@ -168,6 +168,9 @@ body {
     font-size: .8rem;
     text-transform: uppercase; }
 
+/*-------------------------------
+    INLINE BUTTON STYLES
+-------------------------------*/
 .button-inline {
   border: none;
   color: var(--color-primary);
@@ -177,17 +180,67 @@ body {
   display: inline-block;
   background-color: transparent;
   cursor: pointer;
-  transition: all .2s; }
+  transition: all .2s;
+  /*-------------------------------
+        INLINE HOVER/FOCUS STYLES
+    -------------------------------*/ }
   .button-inline span {
     margin-left: .3rem;
     transition: margin-left .2s; }
   .button-inline:hover {
-    color: var(--color-grey-dark-1); }
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: .5rem 1rem;
+    box-shadow: 0 0.5px 4px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px); }
     .button-inline:hover span {
       margin-left: 8px; }
-  .button-inline:focus {
+  .button-inline:active {
     outline: none;
-    animation: pulsate 1s infinite; }
+    background-color: var(--color-primary);
+    transform: translateY(0); }
+
+/*-------------------------------
+    CALL TO ACTION STYLES
+-------------------------------*/
+.button-cta {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  border-radius: 100px;
+  border: none;
+  background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark));
+  color: var(--color-white);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all .2s;
+  /*-------------------------------
+        CTA HOVER/ACTIVE STYLES
+    -------------------------------*/ }
+  .button-cta > * {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    transition: all .2s; }
+  .button-cta--visible {
+    padding: 2rem 7.5rem; }
+  .button-cta--hidden {
+    position: absolute;
+    padding: 2rem 0;
+    top: -100%;
+    left: 0; }
+  .button-cta:hover {
+    box-shadow: 0 0.5px 4px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px); }
+  .button-cta:hover .button-cta--visible {
+    transform: translateY(100%); }
+  .button-cta:hover .button-cta--hidden {
+    top: 0; }
+  .button-cta:active {
+    outline: none;
+    transform: translateY(0);
+    background-image: linear-gradient(to left, var(--color-primary-dark) 0%, var(--color-primary) 90%, var(--color-primary-light) 100%); }
 
 .description {
   font-size: 1.4rem;
@@ -285,6 +338,15 @@ body {
     color: var(--color-grey-light-2);
     font-family: sans-serif;
     z-index: 1; }
+
+.cta {
+  padding: 3.5rem 0;
+  text-align: center; }
+  .cta__book-now {
+    font-size: 1.2rem;
+    font-weight: 200;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem; }
 
 .header {
   font-size: 1.4rem;

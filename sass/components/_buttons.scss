@@ -1,3 +1,6 @@
+/*-------------------------------
+    INLINE BUTTON STYLES
+-------------------------------*/
 .button-inline {
     border: none;
     color: var(--color-primary);
@@ -14,16 +17,88 @@
         transition: margin-left .2s;
     }
 
+    /*-------------------------------
+        INLINE HOVER/FOCUS STYLES
+    -------------------------------*/
     &:hover {
-        color: var(--color-grey-dark-1);
+        background-color: var(--color-primary);
+        color: var(--color-white);
+        padding: .5rem 1rem;
+
+        box-shadow: 0 .5px 4px rgba(0, 0, 0, .2);
+        transform: translateY(-2px);
 
         span {
             margin-left: 8px;
         }
     }
 
-    &:focus {
+    &:active {
         outline: none;
-        animation: pulsate 1s infinite;
+        background-color: var(--color-primary);
+        transform: translateY(0);
+        
     }
 }
+/*-------------------------------
+    CALL TO ACTION STYLES
+-------------------------------*/
+.button-cta {
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    border-radius: 100px;
+    border: none;
+    background-image: linear-gradient(to right,
+                    var(--color-primary-light),
+                    var(--color-primary-dark));
+    color: var(--color-white);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all .2s;
+
+    & > * {
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        transition: all .2s;
+    }
+
+    &--visible {
+        padding: 2rem 7.5rem;
+    }
+
+    &--hidden {
+        position: absolute;
+        padding: 2rem 0;
+        top: -100%;
+        left: 0;
+    }
+
+    /*-------------------------------
+        CTA HOVER/ACTIVE STYLES
+    -------------------------------*/
+    &:hover {
+        box-shadow: 0 .5px 4px rgba(0, 0, 0, .2);
+        transform: translateY(-2px);
+    }
+
+    &:hover &--visible {
+        transform: translateY(100%);
+    }
+
+    &:hover &--hidden {
+        top: 0;
+    }
+
+    &:active {
+        outline: none;
+        transform: translateY(0);
+        background-image: linear-gradient(to left,
+                             var(--color-primary-dark) 0%,
+                            var(--color-primary) 90%,
+                            var(--color-primary-light) 100%);
+    }
+}
+    
