@@ -4,11 +4,20 @@
     background-color: var(--color-grey-light-1);
     box-shadow: var(--shadow-dark);
     
-    min-height: 50rem;
+    @include respond (tab-land) {
+        margin: 0 ;
+        max-width: 100%;
+        width: 100%;
+
+    }
 }
 
 .content {
     display: flex;
+
+    @include respond (tab-port) {
+        flex-direction: column;
+    }
 }
 
 .hotel-view {
@@ -22,4 +31,12 @@
     padding: 4.5rem;
     background-color: var(--color-grey-light-1);
     border-bottom: var(--border-small);
+
+    @include respond (tab-port) {
+        padding: 3rem;
+    }
+
+    @include respond (phone) {
+        flex-direction: column;
+    }
 }
