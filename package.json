@@ -10,11 +10,17 @@
     "compress:css": "node-sass css/style.prefix.css css/style.css --output-style compressed",
     "build:css": "npm-run-all compile:sass prefix:css compress:css"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "build:css && git add ."
+    }
+  },
   "author": "Daryl Stensland",
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^7.1.4",
     "concat": "^1.0.3",
+    "husky": "^7.0.1",
     "node-sass": "^4.5.3",
     "npm-run-all": "^4.1.1",
     "postcss-cli": "^4.1.1"
